@@ -1,0 +1,19 @@
+.side-bar
+  .bar-user
+    .bar-user__name
+      %p.bar-user__name--left
+        名前
+      %ul.bar-user__name__right
+        %li.bar-user__name__right--group
+          = link_to "#" do
+            = icon('far', 'edit', class: "bar-user__name__right--icon")
+        %li
+          = link_to "#" do
+            = icon("fa", "cog",class: "bar-user__name__right--btn")
+  .bar-group
+    .bar-group__box
+      %p.bar-group__box__name
+        グループ名
+      %p.bar-group__box__message
+        テキスト
+    
