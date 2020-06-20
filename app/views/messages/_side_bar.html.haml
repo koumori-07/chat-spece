@@ -2,13 +2,13 @@
   .bar-user
     .bar-user__name
       %p.bar-user__name--left
-        名前
+        = current_user.name
       %ul.bar-user__name__right
         %li.bar-user__name__right--group
           = link_to "#" do
             = icon('far', 'edit', class: "bar-user__name__right--icon")
         %li
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon("fa", "cog",class: "bar-user__name__right--btn")
   .bar-group
     .bar-group__box
