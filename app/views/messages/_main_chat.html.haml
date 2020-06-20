@@ -1,0 +1,30 @@
+.main-chat
+  .chat-group
+    .chat-group__box
+      .chat-group__box--name
+        グループ名
+      .chat-group__box--member
+        Member：
+    .chat-group__edit
+      = link_to "#",class: "chat-group__edit--line" do
+        %p.chat-group__edit--btn
+          Edit
+  .chat-message
+    .chat-message__area
+      .chat-message__area__date
+        .chat-message__area__date--name
+          テスト
+        .chat-message__area__date--time
+          2020/6/14
+      %p.chat-message__area--talk
+        テスト
+    
+  .chat-form
+    .chat-form__create__new
+      %input{type:"text",placeholder:"type a message",class:"chat-form__create__new__text"}
+      .chat-form__create__new__image
+        %label
+          =icon("fa","image")
+          %input{type:"file",class:"chat-form__create__new__image__icon"}
+    %input{type:"submit",value:"Send",class:"chat-form__create__send"}
+        
