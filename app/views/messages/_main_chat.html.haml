@@ -6,7 +6,7 @@
       .chat-group__box--member
         Member：
     .chat-group__edit
-      = link_to "#",class: "chat-group__edit--line" do
+      = link_to edit_group_path(current_user),class: "chat-group__edit--line" do
         %p.chat-group__edit--btn
           Edit
   .chat-message

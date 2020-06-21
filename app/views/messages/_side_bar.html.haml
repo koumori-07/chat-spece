@@ -5,15 +5,17 @@
         = current_user.name
       %ul.bar-user__name__right
         %li.bar-user__name__right--group
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('far', 'edit', class: "bar-user__name__right--icon")
         %li
           = link_to edit_user_path(current_user) do
             = icon("fa", "cog",class: "bar-user__name__right--btn")
   .bar-group
     .bar-group__box
-      %p.bar-group__box__name
-        グループ名
-      %p.bar-group__box__message
-        テキスト
+      - current_user.groups.each do |group|
+        = link_to messages_path do
+          .bar-group__box__name
+            = group.name
+        %p.bar-group__box__message
+          テキスト
     
