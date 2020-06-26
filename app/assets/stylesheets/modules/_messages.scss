@@ -9,6 +9,10 @@ $color-white:#ffffff;
 }
 .side-bar{
 width: 300px;
+}           
+
+.field_with_errors{
+  width: 100%;
 }
 
 .bar-user{
@@ -100,13 +104,15 @@ width: calc(100vw - 300px);
 .chat-message{
   height:calc(100vh - 190px);
   background-color: #fafafa;
+  padding-top:35px;
+  padding-bottom:46px;
+  overflow: scroll;
   &__area{
-    padding-top:35px;
-    padding-bottom:46px;
-    margin-left:40px;
+    
     &__date{
       display:flex;
       margin-bottom:12px;
+      margin-left:40px;
       &--name{
         font-size: 16px;
         color:#333333;
@@ -120,46 +126,63 @@ width: calc(100vw - 300px);
     &--talk{
       font-size: 14px;
       color:#434A54;
+      margin-left:40px;
+      width: 260px;
     }
   }
+  .messages{
+    height:calc(100vh - 190px);
+  }
+}
+.lower-message__image{
+  max-width: 100%;
+  height:auto;
 }
 .chat-form{
   height:90px;
   background-color: #d2d2d2;
   padding:20px 40px;
-  display: flex;
-  &__create__new{
-    display: flex;
-    height:50px;
-    line-height: 50px;
-    width:100vw;
-    position: relative;
-      &__text{
-        padding:0 40px 0 10px;
+  // display: flex;
+  & form{
+    display: flex; 
+  }
+    &__input-box{
+      display: flex;
+      height:50px;
+      line-height: 50px;
+      width:100%;
+      position: relative;
+      &__create{
         height:50px;
-        background-color: $color-white;
-        width:100%;
-        border:none;
+        width: 100%;
+        padding:0 40px 0 10px;
+        line-height: 50px;
       }
-      &__image{
-        position: absolute;
-        right: 10px;
-        font-size: 1.3rem;
+      &__label{
+        position:absolute;
+        right:10px;
+      }
         &__icon{
           display: none;
+      }
+        &__image{         
+          font-size: 1.3rem; 
+          &__icon{
+            display:none;
+          }
         }
       }
-  }
-    &__create__send{
-      width:100px;
-      padding:0 30px;
-      margin-left:15px;
-      display: flex;
-      justify-content: center;
-      background-color: #38aef0;
-      color:$color-white;
-      line-height:50px;
-      border:solid 1px;
-      border-color:black;
+    
+      &__send{
+        width:100px;
+        padding:0 30px;
+        margin-left:15px;
+        display: flex;
+        justify-content: center;
+        background-color: #38aef0;
+        color:$color-white;
+        line-height:50px;
+        border:solid 1px;
+        border-color:black;
+      }
     }
-  }

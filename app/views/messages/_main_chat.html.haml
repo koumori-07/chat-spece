@@ -2,29 +2,30 @@
   .chat-group
     .chat-group__box
       .chat-group__box--name
-        グループ名
+        = @group.name
       .chat-group__box--member
-        Member：
+        - @group.users.each do |user|
+          = user.name
     .chat-group__edit
-      = link_to edit_group_path(current_user),class: "chat-group__edit--line" do
+      = link_to edit_group_path(@group.id),class: "chat-group__edit--line" do
         %p.chat-group__edit--btn
           Edit
+
   .chat-message
-    .chat-message__area
-      .chat-message__area__date
-        .chat-message__area__date--name
-          テスト
-        .chat-message__area__date--time
-          2020/6/14
-      %p.chat-message__area--talk
-        テスト
+    .messages
+      = render @messages
+
+
     
   .chat-form
-    .chat-form__create__new
-      %input{type:"text",placeholder:"type a message",class:"chat-form__create__new__text"}
-      .chat-form__create__new__image
-        %label
-          =icon("fa","image")
-          %input{type:"file",class:"chat-form__create__new__image__icon"}
-    %input{type:"submit",value:"Send",class:"chat-form__create__send"}
-        
+    =form_for [@group, @message] do |f|
+      .chat-form__input-box
+        =f.text_field :content, placeholder: "type a message", class: "chat-form__input-box__create" 
+        =f.label :image, class: "chat-form__input-box__label" do
+          =icon("fa","image",class: "chat-form__input-box__image")
+          =f.file_field :image, class:"chat-form__input-box__image__icon"
+      =f.submit 'Send', class:"chat-form__send" 
+
+
+    
+ 
