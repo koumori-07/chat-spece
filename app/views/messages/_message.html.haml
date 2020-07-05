@@ -1,17 +1,15 @@
--# .chat-message__area
-.chat-message__area__date
-  .chat-message__area__date--name
-    = message.user.name
-  .chat-message__area__date--time
-    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-.chat-message__area--talk
-  - if message.content.present?
-    .lower-message__content
+.chat-message__area
+  .chat-message__area__date
+    .chat-message__area__date--name
+      = message.user.name
+    .chat-message__area__date--time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chat-message__area--talk
+    - if message.content.present? && message.image.present?
       = message.content
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
-
-
-  
-
- 
+      = image_tag message.image.url, class: 'lower-message__image'
+    - elsif message.content.present?
+      = message.content
+    - else message.image.present?
+      = image_tag message.image.url, class: 'lower-message__image'
+              

@@ -106,13 +106,12 @@ width: calc(100vw - 300px);
   background-color: #fafafa;
   padding-top:35px;
   padding-bottom:46px;
-  overflow: scroll;
+  overflow: scroll; 
   &__area{
-    
+    margin-left:40px;
     &__date{
       display:flex;
       margin-bottom:12px;
-      margin-left:40px;
       &--name{
         font-size: 16px;
         color:#333333;
@@ -126,23 +125,18 @@ width: calc(100vw - 300px);
     &--talk{
       font-size: 14px;
       color:#434A54;
-      margin-left:40px;
       width: 260px;
+      .lower-message__image{
+        max-width: 100%;
+        height:auto;
+      }
     }
   }
-  .messages{
-    height:calc(100vh - 190px);
-  }
-}
-.lower-message__image{
-  max-width: 100%;
-  height:auto;
 }
 .chat-form{
   height:90px;
   background-color: #d2d2d2;
   padding:20px 40px;
-  // display: flex;
   & form{
     display: flex; 
   }
